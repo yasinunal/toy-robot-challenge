@@ -25,16 +25,27 @@ Mockito 2.28.2
 
 ## Sample for commands.txt
 place 0,0,NORTH
+
 move
+
 report
+
 place 0, 0, NORTH
+
 left
+
 report
+
 place 1,2,EAST
+
 move
+
 move
+
 left
+
 move
+
 report
 
 ## History
