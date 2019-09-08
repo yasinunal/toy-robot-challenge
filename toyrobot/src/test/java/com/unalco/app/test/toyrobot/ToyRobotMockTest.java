@@ -17,7 +17,7 @@ import com.unalco.app.toyrobot.service.ToyRobotEngine;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ToyRobotMockTest {
-
+ 
 	@Mock
 	CommandProvider commandProviderMock;
 

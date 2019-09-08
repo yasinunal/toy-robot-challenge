@@ -4,7 +4,7 @@ import com.unalco.app.toyrobot.model.CommandType;
 import com.unalco.app.toyrobot.model.Facing;
 
 public class ToyRobot {
-
+ 
 	// This class represents my toy robot
 	private Position position;
 
