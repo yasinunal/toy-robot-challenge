@@ -8,9 +8,13 @@ however further valid movement commands is still allowed.
 ## Prerequisities & Libraries
 
 Eclipse IDE
+
 Java 1.8
+
 Maven 3.6.0
+
 JUnit 5
+
 Mockito 2.28.2
 
 ## Usage
