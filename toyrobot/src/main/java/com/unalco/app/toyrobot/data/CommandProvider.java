@@ -9,6 +9,10 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Scanner;
 
+/**
+ * @author yasinunal
+ * This object retrieves all commands from a file and returns as a list.
+ */
 public class CommandProvider {
 	
 	public List<String> generate() {

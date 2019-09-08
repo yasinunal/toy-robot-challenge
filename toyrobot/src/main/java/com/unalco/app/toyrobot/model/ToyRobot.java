@@ -20,6 +20,7 @@ public class ToyRobot {
 		this.position = position;
 	}
 	
+	// Moves the toy robot one unit forward in the direction it is currently facing.
 	public void move() {
 		
 		if(isMovementValid()) {
@@ -50,6 +51,7 @@ public class ToyRobot {
 		
 	}
 	
+	// Rotate the robot 90° clockwise regarding the command type without changing the position of the robot.
 	public void rotate(CommandType commandType) {
 		
 		switch (this.getPosition().getFacing()) {
@@ -88,10 +90,13 @@ public class ToyRobot {
 		
 	}
 	
+	// Outputs the X,Y and F of the robot.
 	public String report() {
 		return String.format("%d, %d, %s", this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getFacing().name());
 	}
 	
+	// Check the result of each command and if it will cause of a falling robot, 
+	// then keeps the location and facing of robot and skips the next command.
 	public boolean isMovementValid() {
 		
 		switch (this.getPosition().getFacing()) {

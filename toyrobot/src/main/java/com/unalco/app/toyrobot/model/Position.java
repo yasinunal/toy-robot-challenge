@@ -1,5 +1,9 @@
 package com.unalco.app.toyrobot.model;
 
+/**
+ * @author yasinunal
+ * This class represents the location of robot on table, a grid of 5x5
+ */
 public class Position {
 
 	// Represents x index of location of robot in a grid of 5x5 units.
