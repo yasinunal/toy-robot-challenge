@@ -21,7 +21,7 @@ public class ToyRobot {
 	}
 	
 	// Moves the toy robot one unit forward in the direction it is currently facing.
-	public void move() {
+	public boolean move() {
 		
 		if(isMovementValid()) {
 			
@@ -46,7 +46,10 @@ public class ToyRobot {
 			default:
 				break;
 			}
+			return true; // Movement done.
 		}
+		else return false; //Invalid move.
+		
 		
 		
 	}
@@ -92,7 +95,7 @@ public class ToyRobot {
 	
 	// Outputs the X,Y and F of the robot.
 	public String report() {
-		return String.format("%d, %d, %s", this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getFacing().name());
+		return String.format("Robot Position : %d, %d, %s", this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getFacing().name());
 	}
 	
 	// Check the result of each command and if it will cause of a falling robot, 

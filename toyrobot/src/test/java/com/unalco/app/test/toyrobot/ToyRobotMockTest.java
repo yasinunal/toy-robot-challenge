@@ -25,7 +25,7 @@ public class ToyRobotMockTest {
 	ToyRobotEngine myRobotEngine;
 		
 	@Test
-	public void executeScenario1() {
+	public void executeScenario() {
 		
 		when(commandProviderMock.generate()).thenReturn(Arrays.asList(
 			"PLACE 0,0,EAST", "MOVE", "MOVE", "RIGHT", "MOVE", "LEFT", "MOVE", "REPORT"
@@ -37,9 +37,9 @@ public class ToyRobotMockTest {
 		
 		myRobotEngine.executeAllCommands();
 		
-		assertEquals("3, 0, EAST", myRobotEngine.getMyRobot().report());
-		
+		assertEquals("Robot Position : 3, 0, EAST", myRobotEngine.getMyRobot().report());
 		
 	}
+
 	
 }

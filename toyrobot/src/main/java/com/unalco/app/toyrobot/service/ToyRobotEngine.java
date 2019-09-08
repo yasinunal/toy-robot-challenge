@@ -49,7 +49,7 @@ public class ToyRobotEngine {
 			
 			if(command.contains(CommandType.PLACE.name())) {
 				
-				System.out.println(command);
+				System.out.println("Placing the robot at : " + command);
 				
 				// Place command will be executed, mark the flag.
 				isPlaceCommandFound = true;
@@ -100,8 +100,8 @@ public class ToyRobotEngine {
 				
 				// Executes MOVE command.
 				if (command.contains(CommandType.MOVE.name())){					
-					myRobot.move();
-					System.out.println(command);
+					if( myRobot.move()) System.out.println(command + " - " + myRobot.report());
+					else System.out.println(command + " - Couldn't execute this MOVE command - Robot at the border");
 				}
 				// Executes LEFT command
 				else if (command.contains(CommandType.LEFT.name())){
@@ -114,7 +114,7 @@ public class ToyRobotEngine {
 					System.out.println(command);
 				}
 				else { // Executes REPORT command
-					System.out.println(myRobot.report());
+					System.out.println(myRobot.report() + "\n");
 				}
 			}
 			else {
