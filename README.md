@@ -58,8 +58,7 @@ Run the mock tests with Mock data in ToyRobotMockTest.java class.
 
 At last, I implemented CommandProvider.java and ToyRobotApplication.java
 
-    ### src/main/java
-    
+    ### src/main/java ###
     com.unalco.app.toyrobot
       - ToyRobotApplication.java (Main Application)
 
@@ -75,14 +74,13 @@ At last, I implemented CommandProvider.java and ToyRobotApplication.java
     com.unalco.app.toyrobot.service
       - ToyRobotEngine.java ( Engine that executes all the commands from file, and make the robot roam on the table top.)
 
-    src/test/java
-    
+    ### src/test/java ###
     com.unalco.app.test.toyrobot
       -ToyRobotMockTest.java ( Mock test class for the ToyRobotEngine ) 
       
-    src/main/resources
-        application.properties ( Filepath for the file that includes commands should be provided in this properties file )
-        toy.robot.commands.file=/home/.../..../commands.txt
+    ### src/main/resources ###
+    application.properties ( Filepath for the file that includes commands should be provided in this properties file )
+    toy.robot.commands.file=/home/.../..../commands.txt
 
 ## Credits
 
