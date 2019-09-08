@@ -82,6 +82,29 @@ At last, I implemented CommandProvider.java and ToyRobotApplication.java
     application.properties ( Filepath for the file that includes commands should be provided in this properties file )
     toy.robot.commands.file=/home/.../..../commands.txt
 
+## How-To-Test
+You can use executeScenario() method to make your mock tests in ToyRobotMockTest.java class
+
+        when(commandProviderMock.generate()).thenReturn(Arrays.asList(
+			"PLACE 0,0,EAST", "MOVE", "MOVE", "RIGHT", "MOVE", "LEFT", "MOVE", "REPORT"
+		));
+
+		ToyRobot myRobot = new ToyRobot();
+				
+		myRobotEngine = new ToyRobotEngine(commandProviderMock, myRobot);
+		
+		myRobotEngine.executeAllCommands();
+		
+		assertEquals("Robot Position : 3, 0, EAST", myRobotEngine.getMyRobot().report());
+        
+Expected : Robot Position : 3, 0, EAST
+Actual   : Robot Position : 3, 0, EAST
+
+## Missing Points and What I Would Add Given Time
+- I could use Spring framework for a complete dependency injection logic.
+- I could provide table size dynamically.
+- I could add control for possible negative values in PLACE command.
+
 ## Credits
 
 Developed by Yasin Ünal, 2019
