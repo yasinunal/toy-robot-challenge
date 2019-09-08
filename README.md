@@ -50,7 +50,7 @@ report
 
 ## History
 
-I completed dummy CommandProvider and ToyRobotEngine classes first.
+I wrote a dummy CommandProvider class first.
 Then implemented ToyRobotEngine.java and ToyRobotMockTest.java classes
 Run the mock tests with Mock data in ToyRobotMockTest.java class.
 At last, I implemented CommandProvider.java and ToyRobotApplication.java
