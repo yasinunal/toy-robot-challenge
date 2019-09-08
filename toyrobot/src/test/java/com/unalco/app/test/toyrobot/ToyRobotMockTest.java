@@ -11,10 +11,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import com.unalco.app.data.CommandProvider;
-import com.unalco.app.model.Facing;
-import com.unalco.app.model.Position;
-import com.unalco.app.model.ToyRobot;
+import com.unalco.app.toyrobot.data.CommandProvider;
+import com.unalco.app.toyrobot.model.Facing;
+import com.unalco.app.toyrobot.model.Position;
+import com.unalco.app.toyrobot.model.ToyRobot;
 import com.unalco.app.toyrobot.service.ToyRobotEngine;
 
 @RunWith(MockitoJUnitRunner.class)
