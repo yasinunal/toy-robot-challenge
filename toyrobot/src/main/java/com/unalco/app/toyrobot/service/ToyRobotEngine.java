@@ -11,6 +11,12 @@ import com.unalco.app.toyrobot.model.Position;
 import com.unalco.app.toyrobot.model.ToyRobot;
 
 
+/**
+ * @author yasinunal
+ * This class represents the engine of the robot.
+ * It has command provider object to retrieve all the commands from a file.
+ * Commands are generated from file via CommandProvider object.
+ */
 public class ToyRobotEngine {
 
 	private CommandProvider commandProvider;
@@ -28,8 +34,11 @@ public class ToyRobotEngine {
 
 	public void executeAllCommands() {
 		
+		// Commands are generated from file via CommandProvider object.
 		List<String> commandList = commandProvider.generate();
 		
+		// If the command is PLACE command, then other commands can be considered in later executions.
+		// This boolean flags whether at least one PLACE command is exist or not.
 		boolean isPlaceCommandFound = false;
 		
 		for (int i = 0; i < commandList.size(); i++) {
@@ -37,6 +46,9 @@ public class ToyRobotEngine {
 			String command = commandList.get(i);
 			
 			if(command.contains(CommandType.PLACE.name())) {
+				
+				System.out.println(command);
+				
 				isPlaceCommandFound = true;
 				// Parse x,y coordinates and facing to place the robot in table
 				String regex = "(\\d+)";
@@ -69,17 +81,20 @@ public class ToyRobotEngine {
 			
 			if(isPlaceCommandFound) {
 				
-				if (command.contains(CommandType.MOVE.name())){
+				if (command.contains(CommandType.MOVE.name())){					
 					myRobot.move();
+					System.out.println(command);
 				}
 				else if (command.contains(CommandType.LEFT.name())){
 					myRobot.rotate(CommandType.LEFT);
+					System.out.println(command);
 				}
 				else if (command.contains(CommandType.RIGHT.name())){
 					myRobot.rotate(CommandType.RIGHT);
+					System.out.println(command);
 				}
 				else { // REPORT command
-					myRobot.report();
+					System.out.println(myRobot.report());
 				}
 			}
 			else {

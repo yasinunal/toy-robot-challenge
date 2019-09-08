@@ -7,14 +7,9 @@ public class ToyRobot {
 
 	// This class represents my toy robot
 	private Position position;
-	
+
 	public ToyRobot() {
 		super();
-	}
-	
-	public ToyRobot(Position position) {
-		super();
-		this.position = position;
 	}
 
 	public Position getPosition() {
@@ -51,6 +46,7 @@ public class ToyRobot {
 				break;
 			}
 		}
+		
 		
 	}
 	

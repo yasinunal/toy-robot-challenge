@@ -12,8 +12,6 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import com.unalco.app.toyrobot.data.CommandProvider;
-import com.unalco.app.toyrobot.model.Facing;
-import com.unalco.app.toyrobot.model.Position;
 import com.unalco.app.toyrobot.model.ToyRobot;
 import com.unalco.app.toyrobot.service.ToyRobotEngine;
 
@@ -22,26 +20,24 @@ public class ToyRobotMockTest {
 
 	@Mock
 	CommandProvider commandProviderMock;
-	
-	
+
 	@InjectMocks
 	ToyRobotEngine myRobotEngine;
-	
-	
+		
 	@Test
-	public void executeAllCommands() {
+	public void executeScenario1() {
 		
 		when(commandProviderMock.generate()).thenReturn(Arrays.asList(
-			"PLACE 0,0,NORTH", "MOVE", "MOVE", "RIGHT", "MOVE", "REPORT"
+			"PLACE 0,0,EAST", "MOVE", "MOVE", "RIGHT", "MOVE", "LEFT", "MOVE", "REPORT"
 		));
 
-		ToyRobot myRobot = new ToyRobot(new Position(0,0,Facing.NORTH));
+		ToyRobot myRobot = new ToyRobot();
 				
 		myRobotEngine = new ToyRobotEngine(commandProviderMock, myRobot);
 		
 		myRobotEngine.executeAllCommands();
 		
-		assertEquals("1, 2, EAST", myRobotEngine.getMyRobot().report());
+		assertEquals("3, 0, EAST", myRobotEngine.getMyRobot().report());
 		
 		
 	}
